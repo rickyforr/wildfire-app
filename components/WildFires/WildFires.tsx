@@ -22,7 +22,7 @@ export const WildFires = () => {
     geographicDescriptionOptions,
     filterByGeographicDescription,
     onDownload,
-  } = useGetWildFiresData(100);
+  } = useGetWildFiresData();
 
   const csvInstance = useRef<any>();
   useEffect(() => {
