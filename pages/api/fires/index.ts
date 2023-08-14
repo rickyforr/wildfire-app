@@ -11,12 +11,16 @@ export default async function handler(
     fireCause = "",
     fireStatus = "",
     geographicDescription = "",
-  } = req.query as { count: string; fireCause: string; fireStatus: string, geographicDescription: string };
+  } = req.query as {
+    count: string;
+    fireCause: string;
+    fireStatus: string;
+    geographicDescription: string;
+  };
   try {
     const response = await axios.get(
       getAllWildfires(count, fireCause, fireStatus, geographicDescription)
     );
-    
     return res.status(200).json(response.data);
   } catch (error) {
     return res.status(500).json({ error });

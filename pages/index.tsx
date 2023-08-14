@@ -1,9 +1,5 @@
 import { WildFires } from "@/components/WildFires/WildFires";
 
 export default function Home() {
-  return (
-    <main>
-      <WildFires />
-    </main>
-  );
+  return <WildFires />;
 }
