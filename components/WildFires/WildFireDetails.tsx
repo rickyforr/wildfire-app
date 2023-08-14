@@ -33,7 +33,7 @@ export const WildfireDetails = ({ wildfireData }: Props) => {
   } = wildfireData;
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 m-1">
+    <div className="bg-white rounded-lg shadow-md p-4">
       <h2 className="text-xl font-semibold mb-2">{INCIDENT_NAME}</h2>
       <div className="flex justify-between mb-4">
         <div>

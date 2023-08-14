@@ -2,8 +2,9 @@ import { wildfiresUrlString } from "@/lib/utils";
 import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 import { json2csv } from "json-2-csv";
+import { withApiAuthRequired } from "@auth0/nextjs-auth0";
 
-export default async function handler(
+export default withApiAuthRequired(async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -39,7 +40,7 @@ export default async function handler(
       const data = req.body.data;
       try {
         const csv = await json2csv(data);
-        res.status(200).json({ document: csv });
+        return res.status(200).json({ document: csv });
       } catch (error) {
         return res.status(500).json({ error });
       }
@@ -47,4 +48,4 @@ export default async function handler(
     default:
       res.status(405).json({ message: "Method not allowed" });
   }
-}
+});

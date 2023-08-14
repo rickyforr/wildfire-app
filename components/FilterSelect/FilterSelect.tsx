@@ -12,9 +12,14 @@ type Props = {
  * @param props.label - The label for the select element
  * @param props.onChange - The function to call when the select value changes
  */
-export const FilterSelect = ({ selectedOption, options, label, onChange }: Props) => {
+export const FilterSelect = ({
+  selectedOption,
+  options,
+  label,
+  onChange,
+}: Props) => {
   return (
-    <span className="mr-[1rem]">
+    <span className="flex flex-col">
       <label className="truncate">{label}</label>
       <select
         className="max-w-[10rem] p-2 rounded-md text-black"
@@ -22,8 +27,10 @@ export const FilterSelect = ({ selectedOption, options, label, onChange }: Props
         value={selectedOption}
       >
         <option value="">All</option>
-        {options.map((option) => (
-          <option value={option}>{option}</option>
+        {options.map((option, index) => (
+          <option key={`${selectedOption}-option-${index}`} value={option}>
+            {option}
+          </option>
         ))}
       </select>
     </span>

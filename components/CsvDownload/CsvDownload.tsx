@@ -1,4 +1,3 @@
-import { FireFeature } from "@/lib/types";
 import { data } from "autoprefixer";
 import { RefObject } from "react";
 import { CSVLink } from "react-csv";
@@ -14,7 +13,7 @@ export const CsvDownload = ({ csvData, csvInstance, onDownload }: Props) => {
   return (
     <>
       <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40 mt-2"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40 mt-2 max-h-10"
         onClick={onDownload}
       >
         Download
