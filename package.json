@@ -11,6 +11,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^3.1.0",
     "@types/node": "20.5.0",
     "@types/react": "18.2.20",
     "@types/react-csv": "^1.1.3",
